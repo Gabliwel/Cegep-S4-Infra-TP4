@@ -1,0 +1,2 @@
+class MemoryDumpFormatException(Exception):
+	pass
