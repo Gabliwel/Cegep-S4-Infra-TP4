@@ -6,7 +6,7 @@ from myCode import PageBroker
 app = Flask('memoryanalysis')
 
 @app.route('/')
-def welcome():
+def welcome(): #pragma: no cover
 	name = "FG" #TODO put your name here
 
 	return """
@@ -39,7 +39,7 @@ def welcome():
 
 
 @app.route('/upload', methods=['POST'])
-def upload():
+def upload(): #pragma: no cover
 	if 'file' not in request.files:
 		return make_response('file missing from upload request.',400)
 	file = request.files['file']
@@ -58,26 +58,25 @@ def __getMetaPage():
 
 
 @app.route('/metaInfo')
-def getMetaPageInfo():
-	fileName = PageBroker.getDumpFileName()
+def getMetaPageInfo(): #pragma: no cover
 	metaPage = __getMetaPage()
-	return jsonify({'fileName':fileName, 'metaInfo':metaPage.toMap()})
+	return jsonify({'metaInfo':metaPage.toMap()})
 
 
 @app.route('/bitmapInfo')
-def getBitmapPageInfo():
+def getBitmapPageInfo(): #pragma: no cover
 	return "Something needs to be done here."
 
 
 @app.route('/ptInfo')
-def getPTPageInfo():
+def getPTPageInfo(): #pragma: no cover
 	return "Something needs to be done here."
 
 
 @app.route('/pltInfo')
-def getPLTPageInfo():
+def getPLTPageInfo(): #pragma: no cover
 	return "Something needs to be done here."
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #pragma: no cover
 	app.run(debug=True, host='0.0.0.0', port = 5555)
