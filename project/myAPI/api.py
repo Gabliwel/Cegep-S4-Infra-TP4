@@ -51,7 +51,7 @@ def upload(): #pragma: no cover
 	return "file successfully uploaded.</br>Return <a href='/'>home</a>"
 
 
-def __getMetaPage():
+def __getMetaPage(): #pragma: no cover
 	dumpMetaPage = PageBroker.getPage(0)
 	metaPage = MetaPage.parseFromHexDump(dumpMetaPage)
 	return metaPage
