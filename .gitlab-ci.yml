@@ -1,0 +1,11 @@
+image: demers/python420Wa
+
+stages:
+  - test
+
+
+utests:
+  stage: test
+  script:
+    - pip3 install -r requirements.txt
+    - bash ./project/scripts/run-unittests.sh
