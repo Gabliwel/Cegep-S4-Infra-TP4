@@ -12,6 +12,8 @@ utests:
 
 dtests:
   stage: test
+  environment:
+    base_path: ./mnt/app/files
   script:
     - pip3 install -r requirements.txt
     - ./run.sh ./project/myAPI/api.py &
