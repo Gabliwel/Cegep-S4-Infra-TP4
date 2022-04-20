@@ -1,4 +1,5 @@
 image: demers/python420w4a
+entrypoint: ["/mnt/data"]
 
 stages:
   - test
@@ -14,9 +15,5 @@ dtests:
   stage: test
   script:
     - pip3 install -r requirements.txt
-    - ls
-    - mkdir /mnt/data/
-    - cd /mnt/data/
-    - mkdir /files/
     - ./run.sh ./project/myAPI/api.py &
     - python3 -m unittest discover -s project -v -p dtest_*.py
