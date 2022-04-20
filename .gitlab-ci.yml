@@ -8,4 +8,4 @@ utests:
   stage: test
   script:
     - pip3 install -r requirements.txt
-    - bash ./project/scripts/run-unittests.sh
+    - python3 -m unittest discover -s project -v -o test_*.py
