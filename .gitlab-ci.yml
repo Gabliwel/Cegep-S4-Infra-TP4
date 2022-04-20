@@ -1,5 +1,4 @@
 image: demers/python420w4a
-entrypoint: ["/mnt/data"]
 
 stages:
   - test
@@ -13,6 +12,8 @@ utests:
 
 dtests:
   stage: test
+  image:
+    - entrypoint: ["/mnt/data"]
   script:
     - pip3 install -r requirements.txt
     - ./run.sh ./project/myAPI/api.py &
