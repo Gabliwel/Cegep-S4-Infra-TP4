@@ -14,7 +14,7 @@ dtests:
   stage: test
   script:
     - pip3 install -r requirements.txt
-    - mkdir /mnt/
+    - ls
     - mkdir /mnt/data/
     - cd /mnt/data/
     - mkdir /files/
