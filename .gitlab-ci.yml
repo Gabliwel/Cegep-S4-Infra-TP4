@@ -13,7 +13,7 @@ utests:
 dtests:
   stage: test
   image:
-    - entrypoint: ["/mnt/data"]
+    - entrypoint: "/mnt/data"
   script:
     - pip3 install -r requirements.txt
     - ./run.sh ./project/myAPI/api.py &
