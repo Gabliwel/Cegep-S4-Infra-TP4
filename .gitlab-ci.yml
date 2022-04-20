@@ -1,4 +1,4 @@
-image: demers/python420Wa
+image: demers/python420w4a
 
 stages:
   - test
