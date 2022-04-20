@@ -13,8 +13,10 @@ utests:
 dtests:
   stage: test
   script:
-    - mkdir /mnt/data/files
-    - cd /mnt/app/
     - pip3 install -r requirements.txt
+    - mkdir /mnt/
+    - mkdir /mnt/data/
+    - cd /mnt/data/
+    - mkdir /files/
     - ./run.sh ./project/myAPI/api.py &
     - python3 -m unittest discover -s project -v -p dtest_*.py
