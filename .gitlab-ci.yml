@@ -9,3 +9,10 @@ utests:
   script:
     - pip3 install -r requirements.txt
     - python3 -m unittest discover -s project -v -p test_*.py
+
+dtests:
+  stage: test
+  script:
+    - pip3 install -r requirements.txt
+    - ./run.sh ./project/codeAPI/api.py &
+    - python3 -m unittest discover -s project -v -p dtest_*.py
