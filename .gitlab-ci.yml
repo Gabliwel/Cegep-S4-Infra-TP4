@@ -11,6 +11,8 @@ utests:
     - python3 -m unittest discover -s project -v -p test_*.py
 
 dtests:
+  variables:
+    $CI_BUILDS_DIR = "/mnt/data/files"
   stage: test
   script:
     - pip3 install -r requirements.txt
