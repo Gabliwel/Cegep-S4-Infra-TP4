@@ -1,5 +1,5 @@
 image: demers/python420w4a
-
+variables: GIT_CLONE_PATH = $CI_BUILDS_DIR
 stages:
   - test
 
@@ -11,8 +11,6 @@ utests:
     - python3 -m unittest discover -s project -v -p test_*.py
 
 dtests:
-  variables:
-    $CI_BUILDS_DIR = "/mnt/data/files"
   stage: test
   script:
     - pip3 install -r requirements.txt
