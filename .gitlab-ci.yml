@@ -1,5 +1,8 @@
 image: demers/python420w4a
 
+variables:
+  GIT_CLONE_PATH: $CI_BUILDS_DIR
+
 stages:
   - test
 
