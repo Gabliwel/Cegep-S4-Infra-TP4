@@ -1,0 +1,8 @@
+Name                                 Stmts   Miss  Cover
+--------------------------------------------------------
+project/myCode/CustomExceptions.py       2      0   100%
+project/myCode/MetaPage.py              60      0   100%
+project/myCode/MyUtils.py               19      0   100%
+project/myCode/PageBroker.py            11      0   100%
+--------------------------------------------------------
+TOTAL                                   92      0   100%
