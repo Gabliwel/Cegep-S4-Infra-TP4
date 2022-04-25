@@ -1,13 +1,17 @@
+
 from flask import *
 
 from myCode import MetaPage
 from myCode import PageBroker
+from myCode import BitmapPage
+from myCode import PTPage
+from myCode import PLTPage
 
 app = Flask('memoryanalysis')
 
 @app.route('/')
 def welcome(): #pragma: no cover
-	name = "FG" #TODO put your name here
+	name = "Zachary Gingras, Gabriel Bertrand"
 
 	return """
 	<form action="/upload" enctype="multipart/form-data" method="POST">
@@ -63,19 +67,41 @@ def getMetaPageInfo(): #pragma: no cover
 	return jsonify({'metaInfo':metaPage.toMap()})
 
 
+def __getBitmapPage(): #pragma: no cover
+	dumpBitmapPage = PageBroker.getPage(1)
+	bitmapPage = BitmapPage.getListOfPages(dumpBitmapPage)
+	return bitmapPage
+
 @app.route('/bitmapInfo')
 def getBitmapPageInfo(): #pragma: no cover
-	return "Something needs to be done here."
+	bitmapPage = __getBitmapPage()
+	return jsonify(bitmapPage.toMap())
+
+
+def __getPtinfoPage(): #pragma: no cover
+	dumpPtInfoPage = PageBroker.getPage(0)
+	pageList = PageBroker.getPage(1)
+	ptinfoPage = PTPage.getDictionary(dumpPtInfoPage, pageList)
+	return ptinfoPage
 
 
 @app.route('/ptInfo')
 def getPTPageInfo(): #pragma: no cover
-	return "Something needs to be done here."
+	ptpPage = __getPtinfoPage()
+	return jsonify(ptpPage.toMap())
+
+def __getPltinfoPage(): #pragma: no cover
+	dumpPtInfoPage = PageBroker.getPage(0)
+	pageList = PageBroker.getPage(1)
+	ptinfoPage = PTPage.getDictionary(dumpPtInfoPage, pageList)
+	return ptinfoPage
 
 
 @app.route('/pltInfo')
 def getPLTPageInfo(): #pragma: no cover
-	return "Something needs to be done here."
+	page = PageBroker.getPage(0)
+	pltPage = __getPltinfoPage()
+	return jsonify(PLTPage.getDictionary(page).toMap())
 
 
 if __name__ == '__main__': #pragma: no cover
