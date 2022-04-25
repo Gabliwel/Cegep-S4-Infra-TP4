@@ -10,7 +10,7 @@ def extractSequence(dataBlock, startPosOctet, nbOctets):
 	if startPosDigit < 0:
 		raise ValueError("Cannot extract a sequence from pos (" + str(startPosOctet)  + " octet) in any dataBlock.")
 	if startPosDigit + nbDigits > len(dataBlock):
-		raise ValueError("Cannot extract a sequence from pos (" + str(startPosOctet)  + " octet) with length (" + str(nbOctets) + ")  in a dataBlock of total lenght (" + str(len(dataBlock)/2) + ").")
+		raise ValueError("Cannot extract a sequence from pos (" + str(startPosOctet)  + " octet) with length (" + str(nbOctets) + ")  in a dataBlock of total lenght (" + str(len(dataBlock)/2) + ")." + dataBlock)
 	return dataBlock[startPosDigit:startPosDigit + nbDigits]
 
 

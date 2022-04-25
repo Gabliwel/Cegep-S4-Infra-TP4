@@ -69,7 +69,7 @@ def getMetaPageInfo(): #pragma: no cover
 
 def __getBitmapPage(): #pragma: no cover
 	dumpBitmapPage = PageBroker.getPage(1)
-	bitmapPage = BitmapPage.parseFromHexDump(dumpBitmapPage)
+	bitmapPage = BitmapPage.getListOfPages(dumpBitmapPage)
 	return bitmapPage
 
 @app.route('/bitmapInfo')
