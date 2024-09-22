@@ -1,3 +1,10 @@
+# Projet d'infrastructure
+
+note: 90%
+
+objectif: réaliser certaines tâches à l'aide de machine virtuel via GoogleCloud, docker, une api, et certains scripts .sh
+
+# old readme
 Starting point for TP2.
 
 Your first steps should be:
